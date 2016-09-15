@@ -1,0 +1,109 @@
+Set vFM = 7 ;    // First month of fiscal year
+Set vFD = 0;     // First Day of the week (0=Mon, 1=Tue, ... , 6=Sun)
+
+Temp:
+LOAD
+                min(Period) as minDate,
+                max(Period) as maxDate
+Resident Data;
+ 
+Let varMinDate = num(Peek('minDate', 0, 'Temp'));
+Let varMaxDate = num(Peek('maxDate', 0, 'Temp'));
+DROP Table Temp;
+ 
+TempCalendar:
+LOAD
+                $(varMinDate) + Iterno()-1 As Num,
+                Date($(varMinDate) + IterNo() - 1) as TempDate
+                AutoGenerate 1 While $(varMinDate) + IterNo() -1 <= $(varMaxDate);
+ 
+Calendar:
+LOAD
+                TempDate as Period,
+                //Financial Year (have named 'Year' as this will be used the most within Charts so we can use FieldName as title / label etc without aliasing)
+               // Right(Year(AddMonths(TempDate,-3)),2) & '-' & Right(Year(AddMonths(TempDate,9)),2) as Year,
+                Dual(Right(Year(TempDate) + If(Month(TempDate)>=$(vFM), 1, 0)-1,2) &'-'& Right(Year(TempDate) + If(Month(TempDate)>=$(vFM), 1, 0),2), Year(TempDate) + If(Month(TempDate)>=$(vFM), 1, 0)) as Year,
+                
+                //Standard Year
+                Year(TempDate) As FlatYear,
+                //Month Year (have named 'Month' as this will be used the most within Charts so we can use FieldName as title / label etc without aliasing)
+                MonthName(TempDate) as Month,
+                //Standard Month
+                Month(TempDate) As MonthName,
+                
+                Hour(TempDate) As Hour,
+                //Month order for charts (Apr -> Mar rather than Jan -> Dec)
+                //if(num(Month(TempDate))<4,num(Month(TempDate))+9,num(Month(TempDate))-3) as MonthFinancialNumber,
+                //Day of the month
+                Day(TempDate) As Day,
+                //Financial Year followed by Quarter (have named 'Quarter' as this will be used the most within Charts so we can use FieldName as title / label etc without aliasing)
+               // Right(Year(AddMonths(TempDate,-3)),2) & '-' & Right(Year(AddMonths(TempDate,9)),2) & ' Q' & Ceil(Month(AddMonths(TempDate,9))/3) as Quarter,
+               Dual(Right(Year(TempDate) + If(Month(TempDate)>=$(vFM), 1, 0)-1,2) &'-'& Right(Year(TempDate) + If(Month(TempDate)>=$(vFM), 1, 0),2), Year(TempDate) + If(Month(TempDate)>=$(vFM), 1, 0)) &' Q'&Ceil(Month(AddMonths(TempDate,6))/3) as Quarter,
+                
+                Mod(Month(TempDate)-$(vFM), 12)+1 as MonthFinancialNumber,
+                //Standard Quarter
+               // 'Q'&Ceil(Month(AddMonths(TempDate,9))/3) as QuarterName,
+               Dual('Q' & Ceil((Mod(Month([TempDate])-$(vFM), 12)+1)/3), Ceil((Mod(Month([TempDate])-$(vFM), 12)+1)/3)) as QuarterName,
+                Week(weekstart(TempDate)) & '-' & WeekYear(TempDate) as WeekYear,
+                //Day of the Week
+                WeekDay(TempDate) as WeekDay,                             
+                //Week End Date (have used a concise field name that would work as a label / chart title also)     
+                WeekEnd(TempDate) as [w/e Date],
+                //Financial Week Number
+               /// If(Month(weekstart(TempDate))<4,floor(num(TempDate-weekstart(makedate(Year(weekstart(TempDate))-1,4,1)))/7),floor(num(TempDate-weekstart(makedate(Year(weekstart(TempDate)),4,1)))/7)) as [Week Number],
+               Ceil((TempDate-WeekStart(YearStart(TempDate,0,$(vFM)),0,$(vFD))+1)/7) as [Week Number]
+               // if(MonthName(TempDate) >= MonthName($(varMaxDate)) ,1 ,0) as [ForecastFlag]
+Resident TempCalendar
+Order By TempDate ASC; 
+
+
+
+
+
+
+//Temp:
+//LOAD
+//                min(Period) as minDate,
+//                max(Period) as maxDate
+//Resident Data2;
+// 
+//Let varMinDate = num(Peek('minDate', 0, 'Temp'));
+//Let varMaxDate = num(Peek('maxDate', 0, 'Temp'));
+//DROP Table Temp;
+// 
+//TempCalendar:
+//LOAD
+//                $(varMinDate) + Iterno()-1 As Num,
+//                Date($(varMinDate) + IterNo() - 1) as TempDate
+//                AutoGenerate 1 While $(varMinDate) + IterNo() -1 <= $(varMaxDate);
+// 
+//Calendar:
+//LOAD
+//                TempDate as Period,
+//                //Financial Year (have named 'Year' as this will be used the most within Charts so we can use FieldName as title / label etc without aliasing)
+//                Right(Year(AddMonths(TempDate,-3)),2) & '-' & Right(Year(AddMonths(TempDate,9)),2) as Year,
+//                //Standard Year
+//                Year(TempDate) As FlatYear,
+//                //Month Year (have named 'Month' as this will be used the most within Charts so we can use FieldName as title / label etc without aliasing)
+//                MonthName(TempDate) as Month,
+//                //Standard Month
+//                Month(TempDate) As MonthName,
+//                //Month order for charts (Apr -> Mar rather than Jan -> Dec)
+//                if(num(Month(TempDate))<4,num(Month(TempDate))+9,num(Month(TempDate))-3) as MonthFinancialNumber,
+//                //Day of the month
+//                Day(TempDate) As Day,
+//                //Financial Year followed by Quarter (have named 'Quarter' as this will be used the most within Charts so we can use FieldName as title / label etc without aliasing)
+//                Right(Year(AddMonths(TempDate,-3)),2) & '-' & Right(Year(AddMonths(TempDate,9)),2) & ' Q' & Ceil(Month(AddMonths(TempDate,9))/3) as Quarter,
+//                //Standard Quarter
+//                'Q'&Ceil(Month(AddMonths(TempDate,9))/3) as QuarterName,
+//                Week(weekstart(TempDate)) & '-' & WeekYear(TempDate) as WeekYear,
+//                //Day of the Week
+//                WeekDay(TempDate) as WeekDay,                             
+//                //Week End Date (have used a concise field name that would work as a label / chart title also)     
+//                WeekEnd(TempDate) as [w/e Date],
+//                //Financial Week Number
+//                If(Month(weekstart(TempDate))<4,floor(num(TempDate-weekstart(makedate(Year(weekstart(TempDate))-1,4,1)))/7),floor(num(TempDate-weekstart(makedate(Year(weekstart(TempDate)),4,1)))/7)) as [Week Number]
+//Resident TempCalendar
+//Order By TempDate ASC; 
+//
+//Drop Table TempCalendar;
