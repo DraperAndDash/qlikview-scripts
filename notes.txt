@@ -28,3 +28,8 @@ things to go as qvs:
 - help/info guides??
 - postcode/location data
 - template variables, appName, version etc
+
+common calendar
+- need to supply primary key of the data table
+- can loop through calendar table to get calendar fields
+- what to do if more than one table? 
