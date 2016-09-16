@@ -17,6 +17,9 @@ SUB GenerateCommonCalendar(Region, PrimaryKey, Table)
 
 	NEXT i
 
+	Concatenate (Calendars)
+	LOAD 'Common' as Calendar;
+
 	Call GenerateCalendar(Region, 'CommonDate', 'DateLink');
 
 ENDSUB
