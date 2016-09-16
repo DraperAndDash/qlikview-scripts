@@ -1,0 +1,30 @@
+concatentate detail tables
+rename detail keys to same field
+rename discharge ward to same field
+rename specialty to same field
+add filepath to include file
+add loop for all data files
+put lookups and data in diff folders in cdi
+
+detail key needs to be built from drilldown dimensions
+
+go through app and adjust for local changes
+
+
+go through rob wunderlich QVC
+change calendar script to be created by function like camden
+include common calendar as standard
+move calendar scripts to git hub
+let app include calednar script from git hub
+
+check if gitbash required for making commits if move to prj/github
+
+things to go as qvs:
+- calendar (multiple plus common)
+- resources (images and icons)
+- colour variables
+- getTimeDifference(startDateTime, endDateTime, interval s/h/m/D/M/Y, format, fieldName)
+- max month variables etc generated for each calendar date
+- help/info guides??
+- postcode/location data
+- template variables, appName, version etc
