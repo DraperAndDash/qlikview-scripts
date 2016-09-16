@@ -9,7 +9,7 @@ SUB GenerateCommonCalendar(Region, PrimaryKey, Table)
 
 		LET vCalendarName = Peek('Calendar',$(i),'Calendars');
 
-		Concatenate (DateLink)
+		//Concatenate (DateLink)
 		LOAD Distinct $(PrimaryKey),
 			 $(vCalendarName) as CommonDate,
 			 vCalendarName as DateType
