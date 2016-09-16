@@ -1,5 +1,7 @@
 SUB GenerateCommonCalendar(Region, PrimaryKey, Table)
 
+	SET PrimaryKey = PrimaryKey;
+
 	DateLink:
 	LOAD * Inline [$(PrimaryKey), CommonDate, DateType];
 
