@@ -1,0 +1,22 @@
+SUB GenerateCommonCalendar(Region, PrimaryKey, Table)
+
+	DateLink:
+	LOAD * Inline [$(PrimaryKey), CommonDate, DateType];
+
+	FOR i=0 to NoOfRows('Calendars')
+
+		LET vCalendarName = Peek('Calendar',$(i),'Calendars');
+
+		Concatenate (DateLink)
+		LOAD Distinct $(PrimaryKey),
+			 $(vCalendarName) as CommonDate,
+			 vCalendarName as DateType
+		Resident $(Table);
+
+		SET vCalendarName = '';
+
+	NEXT i
+
+	Call GenerateCalendar(Region, 'CommonDate', 'DateLink');
+
+ENDSUB
