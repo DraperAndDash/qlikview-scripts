@@ -15,19 +15,19 @@ go through rob wunderlich QVC
 change calendar script to be created by function like camden
 include common calendar as standard
 move calendar scripts to git hub
-let app include calednar script from git hub
+let app include calendar script from git hub
 
 check if gitbash required for making commits if move to prj/github
 
 things to go as qvs:
-- calendar (multiple plus common)
+- calendar (multiple plus common) DONE!
+- convert table to html DONE!
 - resources (images and icons)
 - colour variables
 - getTimeDifference(startDateTime, endDateTime, interval s/h/m/D/M/Y, format, fieldName)
 - max month variables etc generated for each calendar date
 - help/info guides??
 - postcode/location data
-- template variables, appName, version etc
 
 common calendar
 - need to supply primary key of the data table

@@ -1,0 +1,44 @@
+SUB OutputTableAsHtml(Table, DestinationPath)
+	
+	SET vTable = $(Table);
+	
+	LET vMaxRowNo = NoOfRows(vTable);
+	LET vColumns = NoOfFields(vTable);
+	
+	NoConcatenate
+	temp_$(Table):
+	LOAD *,
+		 RowNo() as TemporaryPrimaryKey
+	Resident $(Table);
+	
+	DROP Table $(Table);
+	
+	RENAME Table temp_$(Table) to $(Table);
+	
+	NoConcatenate
+	Output:
+	LOAD TemporaryPrimaryKey
+	Resident $(Table);
+	
+	FOR i=0 to $(vColumns)
+		
+		LET vFieldName = FieldName($(i)+1,vTable);
+		SET vFieldNameText = FieldName($(i)+1,vTable);
+		
+		LET vFieldNameHeader = chr(39)&if($(i)=0,'<html><body><table><tr><th>','<th>')&$(vFieldNameText)&if($(i)=$(vColumns)-1,'</th></tr>','</th>')&chr(39);
+		
+		Left Join (Output)
+		LOAD TemporaryPrimaryKey,
+			 if($(i)=0,'<tr><td>','<td>')&$(vFieldName)&if($(i)=$(vColumns)-1,'</td></tr>'&if(RowNo()=$(vMaxRowNo),'</table></body></html>'),'</td>') as $(vFieldNameHeader)
+		Resident $(Table);
+		
+	NEXT i
+	
+	DROP Field TemporaryPrimaryKey;
+	DROP Field [<th>TemporaryPrimaryKey</th>];
+	
+	Store Output into $(DestinationPath)$(Table).html (txt,delimiter is ' ');
+	
+	DROP Table Output;
+
+ENDSUB
