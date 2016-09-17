@@ -29,7 +29,7 @@ SUB OutputTableAsHtml(Table, DestinationPath)
 		
 		Left Join (Output)
 		LOAD TemporaryPrimaryKey,
-			 if($(i)=0,'<tr><td>','<td>')&$(vFieldName)&if($(i)=$(vColumns)-1,'</td></tr>'&if(RowNo()=$(vMaxRowNo),'</table></body></html>'),'</td>') as $(vFieldNameHeader)
+			 if($(i)=0,'<tr><td>','<td>')&[$(vFieldName)]&if($(i)=$(vColumns)-1,'</td></tr>'&if(RowNo()=$(vMaxRowNo),'</table></body></html>'),'</td>') as $(vFieldNameHeader)
 		Resident $(Table);
 		
 	NEXT i
