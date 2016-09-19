@@ -32,3 +32,5 @@ common calendar
 - need to supply primary key of the data table
 - can loop through calendar table to get calendar fields
 - what to do if more than one table? 
+
+for images and icons check if on DraperAndDash domain before setting the resource path - DONE!

@@ -1,4 +1,13 @@
-SET vResourcesPath = 'http://discover.draperanddash.com/opendata/qlikview-scripts/resources/';
+
+IF SubField(OSUser(),'\',1) = 'DRAPERANDDASH' THEN
+
+	SET vResourcesPath = 'http://discover2/opendata/qlikview-scripts/resources/';
+
+  ELSE
+
+  	SET vResourcesPath = 'http://discover.draperanddash.com/opendata/qlikview-scripts/resources/';
+
+ENDIF
 
 ImageData:
 
