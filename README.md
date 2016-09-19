@@ -13,9 +13,9 @@
 <p>
 	This website explains the functions and scripts that are common across many D&D applications. Including these functions and scripts in your development will help speed up the initial process and also make it easier for maintaining applications throughout their use. All these functions and scripts can be included by using the following line of code:
 </p>
-<span><script>
+~~~~
 $(include=https://raw.githubusercontent.com/GlutesDD/qlikview-scripts/master/DraperDashQlikviewScripts.inc?token=ANDyRRSDETE0ume3mrB9hb1_nK60gbGxks5X6TwtwA%3D%3D);
-</script></span>
+~~~~
 
 <div><h2>GenerateCalendar.qvs</h2></div>
 <div>CALL GenerateCalendar.qvs(Region, Date, Table)</div>
