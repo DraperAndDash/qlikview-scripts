@@ -1,0 +1,106 @@
+//First part of colour builder (alpha tint)
+SET vColour100Tint = 'argb(255,';
+SET vColour90Tint = 'argb(230,';
+SET vColour80Tint = 'argb(204,';
+SET vColour70Tint = 'argb(179,';
+SET vColour60Tint = 'argb(153,';
+SET vColour50Tint = 'argb(128,';
+SET vColour40Tint = 'argb(102,';
+SET vColour30Tint = 'argb(77,';
+SET vColour20Tint = 'argb(51,';
+SET vColour10Tint = 'argb(26,';
+
+//Core Colours (for reference)
+SET vColourDraperDashGrey = '=rgb(88,89,91)';
+SET vColourDraperDashSkyBlue = '=rgb(39,170,225)';
+SET vColourDraperDashDarkBlue = '=rgb(44,83,98)';
+SET vColourDraperDashGreen = '=rgb(109,190,155)';
+SET vColourCurrentWaiters = '=rgb(0,204,204)';
+
+//App Base Colour (theme to run through app)
+SET vColourAppBase = '=rgb(109,190,155)';
+SET vColourAssessment = '=rgb(242,159,85)';
+SET vColourRegistration = '=rgb(247,71,94)';
+SET vColourEDTitles = '=rgb(128,128,128)';
+SET vColourEDLines = '=vColourAssessment';
+SET vColourEDBoxes = '=rgb(255,255,255)';
+SET vColourEDBorders = '=vColourAppBase';
+
+//Main BG colours
+SET vColourBGTopBar = '=rgb(255,255,255)';
+SET vColourBGBottomBar = '=vColourAppBase';
+SET vColourBGTopLine = '=vColourAppBase';
+SET vColourBGContent = '=rgb(255,255,255)';
+
+//Main text colours
+SET vColourTextAppTitle = '=vColourDraperDashGrey';
+SET vColourTextSheet = '=vColourDraperDashGrey';
+SET vColourTextSheetSelected = '=vColourAppBase';
+SET vColourTextCopyright = '=rgb(255,255,255)';
+
+//Buttons
+SET vColourButtonCalendarShow = '=vColourAppBase';
+SET vColourButtonCalendarHide = '=vColourAppBase';
+SET vColourButtonSelectionsShow = '=vColourAppBase';
+SET vColourButtonSelectionsHide = '=vColourAppBase';
+
+SET vColourSelectionsMade = '=rgb(0,200,0)';
+
+SET vColourButtonClear = '=vColourDraperDashGreen';
+SET vColourButtonUndo = '=vColourDraperDashGreen';
+SET vColourButtonRedo = '=vColourDraperDashGreen';
+
+SET vColourButtonMaximise = '=vColourDraperDashDarkBlue';
+SET vColourButtonSort = '=vColourDraperDashDarkBlue';
+SET vColourButtonChartType = '=vColourDraperDashDarkBlue';
+
+SET vColourButtonIndicatorsShow = '=vColourDraperDashSkyBlue';
+SET vColourButtonIndicatorsHide = '=vColourDraperDashSkyBlue';
+SET vColourButtonDimensionsShow = '=vColourDraperDashSkyBlue';
+SET vColourButtonDimensionsHide = '=vColourDraperDashSkyBlue';
+
+SET vColourButtonTopMenuShow = '=vColourAppBase';
+SET vColourButtonTopMenuHide = '=vColourAppBase';
+
+SET vColourButtonCurrentSelectionsShow = '=rgb(255,255,255)';
+SET vColourButtonCurrentSelectionsHide = '=rgb(255,255,255)';
+
+//Expand Calendar / Selections / Indicators / Dimensions
+SET vColourExpandLines = '=vColourDraperDashGrey';
+SET vColourExpandBG = '=argb(220,255,255,255)';
+SET vColourExpandTitle = '=vColourDraperDashGrey';
+SET vColourExpandListBoxBG = '=argb(200,255,255,255)';
+SET vColourExpandListBoxText = '=vColourDraperDashGrey';
+
+//Dashboard
+SET vColourDashboardTitles = '=vColourDraperDashGrey';
+SET vColourDashboardSubTitles = '=vColourDraperDashGrey';
+SET vColourDashboardButtonsNotSelected = '=rgb(128,128,128)';
+
+//Discovery Infographics / Dynamic Commentary
+SET vColourTextInfographicTitle1 = '=vColourDraperDashGrey';
+SET vColourTextInfographicNumber1 = '=vColourDraperDashGrey';
+SET vColourTextInfographicSubTitle1 = '=vColourDraperDashGrey';
+SET vColourTextInfographicText1 = '=vColourDraperDashGrey';
+
+SET vColourTextInfographicTitle2 = '=vColourDraperDashGrey';
+SET vColourTextInfographicNumber2 = '=vColourDraperDashGrey';
+SET vColourTextInfographicSubTitle2 = '=vColourDraperDashGrey';
+SET vColourTextInfographicText2 = '=vColourDraperDashGrey';
+
+//Charts
+SET vColourTextChartTitle = '=vColourDraperDashGrey';
+SET vColourTextAxis = '=vColourDraperDashGrey';
+
+//RAGGING
+SET vColourRAGRed = '=rgb(247,71,94)';
+SET vColourRAGAmber = '=rgb(242,159,85)';
+SET vColourRAGGreen = '=rgb(56,203,125)';
+
+SET vColourRAGDOTRed = '=rgb(247,71,94)';
+SET vColourRAGDOTAmber = '=rgb(242,159,85)';
+SET vColourRAGDOTGreen = '=rgb(56,203,125)';
+
+SET vColourRAGRedLight = '=rgb(247,71,94)';
+SET vColourRAGAmberLight = '=rgb(242,159,85)';
+SET vColourRAGGreenLight = '=rgb(56,203,125)';

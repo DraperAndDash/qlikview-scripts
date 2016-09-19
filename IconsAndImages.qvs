@@ -1,3 +1,5 @@
+SET vResourcesPath = 'http://discover.draperanddash.com/opendata/qlikview-scripts/resources/';
+
 ImageData:
 
 LOAD * INLINE [
@@ -59,55 +61,55 @@ ImagesIcons:
 
 BUNDLE LOAD * INLINE [
  ID, Image
- IconCalendar, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/calender.png
- IconSelections, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/selections.png
- IconClear, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/clear.png
- IconUndo, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/undo.png
- IconRedo, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/redo.png
- IconInfo, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/information.png
- IconBookmarks, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/bookmarks.png
- IconEmail, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/email-link.png
- IconPrint, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/print.png
- IconHelp, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/help.png
- IconExpandSingleLeft, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-Left-WhiteonTransparent.png
- IconExpandSingleRight, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-Right-WhiteonTransparent.png
- IconExpandSingleUp, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-Up-WhiteonTransparent.png
- IconExpandSingleDown, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-Down-WhiteonTransparent.png
- IconExpandSingleUpLeft, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-UpLeft-WhiteonTransparent.png
- IconExpandSingleUpRight, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-UpRight-WhiteonTransparent.png
- IconExpandSingleDownLeft, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-DownLeft-WhiteonTransparent.png
- IconExpandSingleDownRight, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-DownRight-WhiteonTransparent.png
- IconExpandDoubleLeft, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-Left-WhiteonTransparent.png
- IconExpandDoubleRight, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-Right-WhiteonTransparent.png
- IconExpandDoubleUp, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-Up-WhiteonTransparent.png
- IconExpandDoubleDown, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-Down-WhiteonTransparent.png
- IconExpandDoubleUpLeft, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-UpLeft-WhiteonTransparent.png
- IconExpandDoubleUpRight, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-UpRight-WhiteonTransparent.png
- IconExpandDoubleDownLeft, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-DownLeft-WhiteonTransparent.png
- IconExpandDoubleDownRight, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/Arrows/Arrow-Double-DownRight-WhiteonTransparent.png
- IconIndicators, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/KPIs.png
- IconDimensions, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/dimensions.png
- IconMaximise, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/maximise.png
- IconRestore, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/restore.png
- IconPlus, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/plus-sign.png
- IconMinus, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/minus-sign.png
- IconSortAlpha, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/a-z.png
- IconSortAsc, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/ascending.png
- IconSortDesc, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/desending.png
- IconChartBar, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/bar-chart.png
- IconChartLine, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/line-chart.png
- IconChartTable, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/table-chart.png
- IconChartBubble, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/bubble-chart.png
- IconChartScatter, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/scatter-chart.png
- IconIndicatorsUp, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/up.png
- IconIndicatorsDown, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/down.png
- IconCurrentSelections, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/cs.png
- IconCurrentSelectionsWhite, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/cs_white.png
- IconCurrentSelectionsCollapseNoSelections, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/pink-double-arrows-left.png
- IconCurrentSelectionsCollapseWithSelections, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/white-double-arrows-left.png
- Curve, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Images/curve.png
- IconMenuRight, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/menu-right.png
- IconMenuLeft, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/menu-left.png
- IconSwitch, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/switch.png
- IconPinkArrowsRight, http://discover.draperanddash.com/opendata/qlikview-scripts/resources/Icons/pink-double-arrows-right.png
+ IconCalendar, $(vResourcesPath)Icons/calender.png
+ IconSelections, $(vResourcesPath)Icons/selections.png
+ IconClear, $(vResourcesPath)Icons/clear.png
+ IconUndo, $(vResourcesPath)Icons/undo.png
+ IconRedo, $(vResourcesPath)Icons/redo.png
+ IconInfo, $(vResourcesPath)Icons/information.png
+ IconBookmarks, $(vResourcesPath)Icons/bookmarks.png
+ IconEmail, $(vResourcesPath)Icons/email-link.png
+ IconPrint, $(vResourcesPath)Icons/print.png
+ IconHelp, $(vResourcesPath)Icons/help.png
+ IconExpandSingleLeft, $(vResourcesPath)Icons/Arrows/Arrow-Double-Left-WhiteonTransparent.png
+ IconExpandSingleRight, $(vResourcesPath)Icons/Arrows/Arrow-Double-Right-WhiteonTransparent.png
+ IconExpandSingleUp, $(vResourcesPath)Icons/Arrows/Arrow-Double-Up-WhiteonTransparent.png
+ IconExpandSingleDown, $(vResourcesPath)Icons/Arrows/Arrow-Double-Down-WhiteonTransparent.png
+ IconExpandSingleUpLeft, $(vResourcesPath)Icons/Arrows/Arrow-Double-UpLeft-WhiteonTransparent.png
+ IconExpandSingleUpRight, $(vResourcesPath)Icons/Arrows/Arrow-Double-UpRight-WhiteonTransparent.png
+ IconExpandSingleDownLeft, $(vResourcesPath)Icons/Arrows/Arrow-Double-DownLeft-WhiteonTransparent.png
+ IconExpandSingleDownRight, $(vResourcesPath)Icons/Arrows/Arrow-Double-DownRight-WhiteonTransparent.png
+ IconExpandDoubleLeft, $(vResourcesPath)Icons/Arrows/Arrow-Double-Left-WhiteonTransparent.png
+ IconExpandDoubleRight, $(vResourcesPath)Icons/Arrows/Arrow-Double-Right-WhiteonTransparent.png
+ IconExpandDoubleUp, $(vResourcesPath)Icons/Arrows/Arrow-Double-Up-WhiteonTransparent.png
+ IconExpandDoubleDown, $(vResourcesPath)Icons/Arrows/Arrow-Double-Down-WhiteonTransparent.png
+ IconExpandDoubleUpLeft, $(vResourcesPath)Icons/Arrows/Arrow-Double-UpLeft-WhiteonTransparent.png
+ IconExpandDoubleUpRight, $(vResourcesPath)Icons/Arrows/Arrow-Double-UpRight-WhiteonTransparent.png
+ IconExpandDoubleDownLeft, $(vResourcesPath)Icons/Arrows/Arrow-Double-DownLeft-WhiteonTransparent.png
+ IconExpandDoubleDownRight, $(vResourcesPath)Icons/Arrows/Arrow-Double-DownRight-WhiteonTransparent.png
+ IconIndicators, $(vResourcesPath)Icons/KPIs.png
+ IconDimensions, $(vResourcesPath)Icons/dimensions.png
+ IconMaximise, $(vResourcesPath)Icons/maximise.png
+ IconRestore, $(vResourcesPath)Icons/restore.png
+ IconPlus, $(vResourcesPath)Icons/plus-sign.png
+ IconMinus, $(vResourcesPath)Icons/minus-sign.png
+ IconSortAlpha, $(vResourcesPath)Icons/a-z.png
+ IconSortAsc, $(vResourcesPath)Icons/ascending.png
+ IconSortDesc, $(vResourcesPath)Icons/desending.png
+ IconChartBar, $(vResourcesPath)Icons/bar-chart.png
+ IconChartLine, $(vResourcesPath)Icons/line-chart.png
+ IconChartTable, $(vResourcesPath)Icons/table-chart.png
+ IconChartBubble, $(vResourcesPath)Icons/bubble-chart.png
+ IconChartScatter, $(vResourcesPath)Icons/scatter-chart.png
+ IconIndicatorsUp, $(vResourcesPath)Icons/up.png
+ IconIndicatorsDown, $(vResourcesPath)Icons/down.png
+ IconCurrentSelections, $(vResourcesPath)Icons/cs.png
+ IconCurrentSelectionsWhite, $(vResourcesPath)Icons/cs_white.png
+ IconCurrentSelectionsCollapseNoSelections, $(vResourcesPath)Icons/pink-double-arrows-left.png
+ IconCurrentSelectionsCollapseWithSelections, $(vResourcesPath)Icons/white-double-arrows-left.png
+ Curve, $(vResourcesPath)Images/curve.png
+ IconMenuRight, $(vResourcesPath)Icons/menu-right.png
+ IconMenuLeft, $(vResourcesPath)Icons/menu-left.png
+ IconSwitch, $(vResourcesPath)Icons/switch.png
+ IconPinkArrowsRight, $(vResourcesPath)Icons/pink-double-arrows-right.png
 ];

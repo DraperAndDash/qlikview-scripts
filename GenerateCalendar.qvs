@@ -1,8 +1,8 @@
 SUB GenerateCalendar(Region, Date, Table)
 
-  SET vCalendarPath = 'https://github.com/GlutesDD/qlikview-scripts/blob/master/MasterCalendar.qvd?raw=true';
-  //SET vCalendarPath = 'MasterCalendar.qvd';
-
+  // SET vCalendarPath = 'https://github.com/GlutesDD/qlikview-scripts/blob/master/MasterCalendar.qvd?raw=true';
+  // SET vCalendarPath = 'http://discover2/opendata/qlikview-scripts/MasterCalendar.qvd';
+  SET vCalendarPath = 'MasterCalendar.qvd';
 
   $(Table)DateRange:
   LOAD min($(Date)) as minDate,
@@ -42,5 +42,14 @@ SUB GenerateCalendar(Region, Date, Table)
   Where CalendarDate >= $(vMinDate) and CalendarDate <= $(vMaxDate);
     
   UNQUALIFY *;
+
+  LET vMaxMonth = '=MonthName(Max('&chr(36)&'(=GetFIeldSelections(Calendar)&'&chr(39)&'_Cal.Month'&chr(39)&')))';
+  LET vPreviousMonth = '=MonthName(Max('&chr(36)&'(=GetFIeldSelections(Calendar)&'&chr(39)&'_Cal.Month'&chr(39)&'),2))';
+  LET vMaxQuarter = '=MaxString('&chr(36)&'(=GetFIeldSelections(Calendar)&'&chr(39)&'_Cal.Quarter_'&chr(39)&'&vCal))';
+  LET vPreviousQuarter = '=MaxString({<'&chr(36)&'(=GetFieldSelections(Calendar)&'&chr(39)&'_Cal.Month'&chr(39)&')={'&chr(39)&chr(36)&'(=MonthName(AddMonths(vMaxMonth,-3)))'&chr(39)&'}>} '&chr(36)&'(=GetFieldSelections(Calendar)&'&chr(39)&'_Cal.Quarter_'&chr(39)&'&vCal))';
+  LET vMaxYear = '=MaxString('&chr(36)&'(=GetFIeldSelections(Calendar)&'&chr(39)&'_Cal.Year_'&chr(39)&'&vCal))';;
+  LET vPreviousYear = '=MaxString({<'&chr(36)&'(=GetFieldSelections(Calendar)&'&chr(39)&'_Cal.Month'&chr(39)&')={'&chr(39)&chr(36)&'(=MonthName(AddMonths(vMaxMonth,-12)))'&chr(39)&'}>} '&chr(36)&'(=GetFieldSelections(Calendar)&'&chr(39)&'_Cal.Year_'&chr(39)&'&vCal))';
+  LET vMaxWeek = '=Date(Max('&chr(36)&'(='&chr(39)&'['&chr(39)&'&GetFIeldSelections(Calendar)&'&chr(39)&'_Cal.w/e Date]'&chr(39)&')),'&chr(39)&'DD/MM/YYYY'&chr(39)&')';
+  LET vPreviousWeek = '=Date(Max('&chr(36)&'(='&chr(39)&'['&chr(39)&'&GetFIeldSelections(Calendar)&'&chr(39)&'_Cal.w/e Date]'&chr(39)&')-7),'&chr(39)&'DD/MM/YYYY'&chr(39)&')';
 
 ENDSUB
