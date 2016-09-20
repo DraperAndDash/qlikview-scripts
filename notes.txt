@@ -33,4 +33,6 @@ common calendar
 - can loop through calendar table to get calendar fields
 - what to do if more than one table? 
 
-for images and icons check if on DraperAndDash domain before setting the resource path - DONE!
+for images and icons check if on DraperAndDash domain before setting the resource path - DONE! not done :(
+ - this doesn't work as still on domain if using D&D laptop but not on site. Need to check internet connection
+resources folder is pretty slow downloading from our server. Try downloading from github?

@@ -1,6 +1,8 @@
 SUB GenerateCalendar(Region, Date, Table)
 
-  IF SubField(OSUser(),'\',1) = 'DRAPERANDDASH' THEN
+  LET vQVDExists = If(Len(QvdCreateTime([http://discover2/opendata/qlikview-scripts/mastercalendar.qvd]))>0,1,0);
+
+  IF $(vQVDExists) = 1 THEN
 
     SET vCalendarPath = 'http://discover2/opendata/qlikview-scripts/MasterCalendar.html';
 
