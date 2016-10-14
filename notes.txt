@@ -34,5 +34,6 @@ common calendar
 - what to do if more than one table? 
 
 for images and icons check if on DraperAndDash domain before setting the resource path - DONE! not done :(
- - this doesn't work as still on domain if using D&D laptop but not on site. Need to check internet connection
+ - this doesn't work as still on domain if using D&D laptop but not on site. Need to check internet connection - DONE! used test on qvd in resources folder using local link, if found then local, if not found then not local
 resources folder is pretty slow downloading from our server. Try downloading from github?
+need to deal with field names in calendar that have spaces
