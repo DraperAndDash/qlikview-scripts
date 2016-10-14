@@ -30,13 +30,6 @@ sub PostIssueToBasecamp
 	Dim strDescription
 	strDescription = ActiveDocument.Variables("vIssueDescription").GetContent().String
 
-	' if Len(strTitle) = 0 or Len(strDescription) = 0 then
-	' 	result = 464
-	' 	set issueResponseText = ActiveDocument.Variables("vIssueResponse").GetContent().String
-	' 	issueResponseText.setContent result, true
-	' 	exit sub
-	' end if
-	
 	xmlToSend = "<comment><body><![CDATA["
 	xmlToSend = xmlToSend + "<div><b>User:</b> " + strUser + "</div>"
 	xmlToSend = xmlToSend + "<div><b>Company:</b> " + strCompany + "</div>"
