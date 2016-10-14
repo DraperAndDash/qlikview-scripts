@@ -1,0 +1,30 @@
+SET HidePrefix = '%';
+SET vIssueShow = -1;
+
+SET vBasecampBaseURL = 'https://draperdash2.basecamphq.com/projects/';
+
+SET vAppName = =DocumentName();
+
+SET vIssueUser = '';
+SET vIssueCompany = '';
+SET vIssueDate = '';
+SET vIssueSheet = '';
+SET vIssueObject = '';
+SET vIssueTitle = '';
+SET vIssueDescription = '';
+
+SET vIssueSent = -1;
+SET vIssueResponse ='';
+
+INPUTFIELD _IssueTitle;
+INPUTFIELD _IssueDescription;
+INPUTFIELD _IssueScreenshot;
+
+IssueTracker:
+LOAD * INLINE [
+_Row, _IssueTitle, _IssueDescription, _IssueScreenshot
+1
+];
+
+SET vPostIssueToBasecamp = $(include=https://raw.githubusercontent.com/GlutesDD/qlikview-scripts/master/issue-tracker/PostIssueToBasecamp.vbs);
+SET vClearIssueFields = $(include=https://raw.githubusercontent.com/GlutesDD/qlikview-scripts/master/issue-tracker/ClearIssueFields.vbs);
