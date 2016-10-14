@@ -49,8 +49,6 @@ sub PostIssueToBasecamp
 	xmlhttp.send xmlToSend
 	
 	result = xmlhttp.Status
-	'result = replace(result, "&qt;", ">")
-	'result = replace(result, "&lt;", "<")
 	
 	set issueResponseText = ActiveDocument.Variables("vIssueResponse")
 	issueResponseText.setContent result, true
