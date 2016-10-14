@@ -4,7 +4,7 @@ SET vIssueShow = -1;
 SET vBasecampBaseURL = 'https://draperdash2.basecamphq.com/projects/';
 SET vBasecampPostID = ''; //This will be set depending on the vAppRelease variable being set to UAT or SM
 
-SET vAppName = =DocumentName();
+SET vAppFileName = =DocumentName();
 
 SET vIssueUser = '';
 SET vIssueCompany = '';
