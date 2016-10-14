@@ -16,7 +16,7 @@ sub PostIssueToBasecamp
 	Dim strCompany
 	strCompany = ActiveDocument.Variables("vIssueCompany").GetContent().String
 	Dim strApp
-	strApp = ActiveDocument.Variables("vAppName").GetContent().String
+	strApp = ActiveDocument.Variables("vAppFileName").GetContent().String
 	Dim strVersion
 	strVersion = ActiveDocument.Variables("vAppVersion").GetContent().String
 	Dim strRelease
