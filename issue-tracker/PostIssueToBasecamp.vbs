@@ -29,6 +29,13 @@ sub PostIssueToBasecamp
 	strTitle = ActiveDocument.Variables("vIssueTitle").GetContent().String
 	Dim strDescription
 	strDescription = ActiveDocument.Variables("vIssueDescription").GetContent().String
+
+	if Len(strTitle) = 0 or Len(strDescription) = 0 
+		then result = 'BLANK'
+			set issueResponseText = ActiveDocument,Variables("vIssueResponse")
+			issueResponseText.setContent result, true
+			exit sub
+	end if
 	
 	xmlToSend = "<comment><body><![CDATA["
 	xmlToSend = xmlToSend + "<div><b>User:</b> " + strUser + "</div>"
