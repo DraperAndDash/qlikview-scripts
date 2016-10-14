@@ -31,7 +31,7 @@ sub PostIssueToBasecamp
 	strDescription = ActiveDocument.Variables("vIssueDescription").GetContent().String
 
 	if Len(strTitle) = 0 or Len(strDescription) = 0 then
-		result = 'BLANK'
+		result = 464
 		set issueResponseText = ActiveDocument,Variables("vIssueResponse")
 		issueResponseText.setContent result, true
 		exit sub
