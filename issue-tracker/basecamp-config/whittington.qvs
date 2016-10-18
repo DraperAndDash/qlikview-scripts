@@ -1,5 +1,0 @@
-//These IDs allow the Issue Tracker to post to the correct project and thread on Basecamp
-
-SET vBasecampProjectID = '13618299';
-SET vBasecampUATPostID = '99981564';
-SET vBasecampSMPostID = '100052239';
