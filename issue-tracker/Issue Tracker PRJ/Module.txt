@@ -1,0 +1,23 @@
+
+Call IncludeMacroScripts
+
+Sub IncludeMacroScripts
+ 
+  Dim str
+ str = ActiveDocument.Variables("vPostIssueToBasecamp").GetContent().String
+ 
+  ExecuteGlobal str
+
+  
+  str = ActiveDocument.Variables("vClearIssueFields").GetContent().String
+
+  ExecuteGlobal str
+
+
+End Sub
+
+Sub DoNothing
+
+
+
+End Sub

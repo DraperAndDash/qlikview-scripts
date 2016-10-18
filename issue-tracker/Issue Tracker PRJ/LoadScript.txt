@@ -1,0 +1,10 @@
+///$tab IssueTracker
+//Manually add these to app edit script
+SET vAppRelease = 'UAT'; //UAT or SM depending on whether app is signed off and put onto Support & Maintenance contract
+SET vAppVersion = '1.0';
+
+//Include Basecamp Project variables
+$(include=https://raw.githubusercontent.com/GlutesDD/qlikview-scripts/master/issue-tracker/basecamp-config/whittington.qvs);
+
+//Inclulde Global Variables and Scripts
+$(include=https://raw.githubusercontent.com/GlutesDD/qlikview-scripts/master/issue-tracker/IssueTrackerInclude.qvs);
